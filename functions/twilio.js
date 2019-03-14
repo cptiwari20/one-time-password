@@ -1,6 +1,7 @@
 const twilio = require('twilio');
+const config = require('./twilioConfig');
 
-const accountSid = 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'; // Your Account SID from www.twilio.com/console
-const authToken = 'your_auth_token';   // Your Auth Token from www.twilio.com/console
+const accountSid = config.SID; 
+const authToken = config.AUTH; 
 
 module.exports = new twilio(accountSid, authToken);
