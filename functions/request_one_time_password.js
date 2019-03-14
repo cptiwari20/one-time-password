@@ -15,8 +15,15 @@ module.exports = function(req, res){
         body: 'Warning! Please do not share this code with anyone. Your code is ' + code,
         to: phone, 
         from: '+13344685421'
+      }, (err) => { 
+        if( err) { return res.status(422).send({error: err})}
+
+        admin.database().ref('users/' + phone)
+          .update({ code: code, codeValid: true}, () => {
+            res.send({success: true})
+          })
       })
-    .then((message) => console.log(message.sid));
+      .then((message) => console.log(message.sid));
 
     }).catch(err => res.status(422).send({error: err}))
 }
