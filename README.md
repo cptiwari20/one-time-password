@@ -9,9 +9,9 @@
   
   
   ## we can easily apply this system to any of our applications as this will create google cloud function based URLs for
-  *CreateUser using phone number, 
-  *Request OTP using phone number and also 
-  *Validate user by OTP password
+  * CreateUser using phone number, 
+  * Request OTP using phone number and also 
+  * Validate user by OTP password
   
   All the urls are tested with the help of POSTMAN application.
   
